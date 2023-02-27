@@ -3,7 +3,7 @@
 // @namespace   https://github.com/gslin/always-expand-description-on-pchome
 // @match       https://24h.pchome.com.tw/prod/*
 // @grant       none
-// @version     0.20230219.0
+// @version     0.20230228.0
 // @author      -
 // @description Always expand description
 // @license     MIT
@@ -21,6 +21,9 @@
           ob.disconnect();
 
           el.click();
+          el.parentElement.addEventListener('click', ev => {
+            ev.stopPropagation();
+          });
         }
       });
     });
